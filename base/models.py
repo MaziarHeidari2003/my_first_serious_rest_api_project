@@ -12,6 +12,7 @@ class Company(models.Model):
 
 
 class Advocate(models.Model):
+  company = models.ForeignKey(Company,on_delete=models.SET_NULL,null=True)
   username = models.CharField(max_length=200)
   bio=models.TextField(max_length=500, null=True, blank=True)
 
